@@ -1,0 +1,314 @@
+
+* {
+  font-family: 'Arial', sans-serif; 
+  font-style: normal; 
+
+  margin: 0; 
+  padding: 0; 
+}
+.about-section {
+  position: relative;
+  width: 100%;
+  overflow: visible;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  color: black;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.about-head h1{
+  padding: 10px;
+  font-weight: bold;
+  font-size: 2.5rem;
+  color: black;
+  margin: 0;
+  margin-bottom: 100px;
+}
+/* Main content container */
+.about-content {
+  display: flex;
+  flex-direction: row; 
+  align-items: center;
+  justify-content: space-between;
+  margin-top: -90px;
+   width: 1200px;
+  border-radius: 10px;
+ gap:10px;
+ 
+}
+.about-content p{
+  font-size: 16px;
+font-weight: 600;
+}
+.about-content li{
+  font-size: 16px;
+  font-weight: 600;
+}
+/* 
+.about-content:hover {
+  background-color: #fea286; 
+    transform: scale(1.05); 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); 
+    color: #000; 
+  } */
+
+/* Text content */
+.about-info {
+  flex: 1; 
+  padding: 20px;
+  
+}
+
+/*Fade effect for info*/
+.about-info {
+  opacity: 0;
+  transform: translateX(-50px);
+  animation: fadeLeft 1s ease-out forwards;
+}
+
+/* Keyframes for fade-left effect */
+@keyframes fadeLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Image container */
+.about-image {
+  flex: 1; /* Take up equal space */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width:100%;
+  height: 400px;
+  object-fit: cover;
+  overflow: hidden;
+  opacity: 0; /* Start with opacity 0 */
+  transform: translateX(50px); /* Start below */
+  animation: fadeTop 1.5s ease-out forwards; /* Trigger animation */
+  animation-delay: 0.5s; /* Optional: Add delay to sync with other animations */
+ 
+}
+
+.building-image{
+  width: 800px; 
+  height: 100%;
+ 
+}
+
+
+/* Keyframes for Fade-Top Animation */
+@keyframes fadeTop {
+  0% {
+    opacity: 0;
+    transform: translateX(80px); /* Start below */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0); /* End at normal position */
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column; /* Stack content on smaller screens */
+    gap: 10px;
+  }
+
+  .about-image {
+    max-width: 100%;
+  }
+}
+
+/* Responsive Design for Extra Small Screens */
+@media (max-width: 480px) {
+  .about-content {
+    flex-direction: column; /* Stack content on smaller screens */
+    gap: 10px;
+    
+  }
+  .about-info {
+    text-align: center;
+    padding: 5px;
+  }
+
+  .about-info p {
+    font-size: 12px;
+    line-height: 1.2;
+  }
+
+  .building-image {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* Mission & Vision Container */
+.misson-vision {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 3rem;
+  padding: 2rem;
+  overflow: hidden; /* Prevent animation overflow */
+  /* border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+}
+
+.misson-vision h1 {
+  color:black;
+  font-size: 2.5rem;
+  font-weight: bold;
+  
+}
+
+/* Individual Sections */
+.Mission,
+.vision {
+  width: 100%;
+  max-width: 1000px;
+  height: 250px;
+  background-color:#0f5286;
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+margin-top: -50px;
+  transform: translateY(80px);
+  animation: bounceFade 2s ease-out forwards; 
+  animation-fill-mode: forwards;  
+}
+.vision{
+  margin: 30px;
+}
+.Mission:hover,
+.vision:hover {
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+} 
+
+ .Mission {
+  animation-delay: 0.5s;  
+}
+
+.vision {
+  animation-delay: 1s; 
+} 
+
+hr {
+  width: 50%;
+  margin: 0.5rem auto 1rem auto;
+  border: none;
+  height: 2px;
+  background-color:whitesmoke;
+}
+.Mission h2,
+.vision h2 {
+  font-size: 2rem;
+  color: white;
+  margin-bottom: 1rem;
+  text-align: justify;
+  font-weight: bold;
+}
+
+.Mission h2{
+  margin-top: 20px;
+}
+.Mission p,
+.vision p {
+  font-size: 16px;
+  color: white;
+  margin: 0;
+  line-height: 1.4;
+  text-align: left;
+}
+
+/* Bounce Fade Animation */
+ @keyframes bounceFade {
+  0% {
+    opacity: 0;
+    transform: translateY(-80px);
+  }
+  50% {
+    opacity: 0.7;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+} 
+
+/* Responsiveness */
+@media screen and (max-width: 768px) {
+  .misson-vision {
+    padding: 1rem;
+  }
+
+  .Mission h2,
+  .vision h2 {
+    font-size: 1.5rem;
+  }
+
+  .Mission p,
+  .vision p {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .Mission,
+  .vision {
+    padding: 1rem;
+  }
+
+  .Mission h2,
+  .vision h2 {
+    font-size: 1.3rem;
+  }
+}
+
+
+
+
+/* Responsiveness */
+@media screen and (max-width: 768px) {
+  .misson-vision {
+    padding: 40px;
+  }
+
+  .Mission h2,
+  .vision h2 {
+    font-size: 1.5rem;
+  }
+
+  .Mission p,
+  .vision p {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .Mission,
+  .vision {
+    padding: 40px;
+  }
+
+  .Mission h2,
+  .vision h2 {
+    font-size: 1.3rem;
+  }
+}
+
